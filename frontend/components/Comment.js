@@ -65,7 +65,7 @@ class Comment extends React.Component {
             <div className='container' style={styles.container}>
             <div className='user' style={styles.user}>
                 <div className='usernameInfo' style={styles.usernameInfo}>
-                    
+                    <img src={require('../../public/frontend/assets/icons/icons.'+splitUsername[0].toLowerCase()+'.png')} style={styles.icon} alt='icon'/>
                     <p style={styles.username}> Anonymous {this.props.commentInfo.user.animal} <br/> answered...</p>
                 </div>
                 <div className='delete' style={styles.delete} onClick={()=> this.onDeleteClick()}>x</div>
