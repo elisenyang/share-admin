@@ -28,7 +28,7 @@ class Home extends React.Component {
     }
   }
  componentDidMount() {
-  fetch('http://localhost:3000/api/home', {
+  fetch('/api/home', {
     method: 'GET'
   }).then(  response => {
     return response.json()
