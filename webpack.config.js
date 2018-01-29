@@ -9,6 +9,15 @@ module.exports = {
         rules: [
             { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
+            {
+                test: /\.(jpg|png|svg)$/,
+                use: {
+                  loader: "file-loader",
+                  options: {
+                    name: "./frontend/assets/icons.[hash].[ext]",
+                  },
+                },
+              },
         ],
     },
     resolve: {

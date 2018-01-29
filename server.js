@@ -3,6 +3,15 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const api = require('./backend/routes');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const connect = process.env.MONGODB_URI;
+mongoose.connect(connect);
+mongoose.Promise = global.Promise;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
