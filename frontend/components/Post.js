@@ -55,7 +55,7 @@ class Post extends React.Component {
             <div className='container' style={containerStyle}>
             <div className='user' style={styles.user}>
                 <div className='usernameInfo' style={styles.usernameInfo}>
-                <img src={require('../assets/icons/'+splitUsername[0].toLowerCase()+'.png')} style={styles.icon} alt='icon'/>
+               
                     <p style={styles.username}> Anonymous {this.props.postInfo.user.animal} <br/> asked...</p>
                 </div>
                 <div className='delete' style={styles.delete} onClick={()=> this.props.deletePost(this.state.post._id)}>x</div>

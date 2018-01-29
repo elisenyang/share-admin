@@ -9,7 +9,14 @@ module.exports = {
         rules: [
             { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
-            {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=/frontend/assets/icons/[name].[ext]"}
+			{
+				test: /\.(gif|jpe?g|png)$/,
+				loader: 'url-loader?limit=25000',
+				query: {
+					limit: 10000,
+					name: 'frontend/assets/icons/[name].[hash:8].[ext]'
+				}
+			}
         ],
     },
     resolve: {
