@@ -60,12 +60,32 @@ class Comment extends React.Component {
 
 
     render() {
+        const icons = {
+            bear: 'http://i66.tinypic.com/qywvbk.png',
+            bird: 'http://i63.tinypic.com/2j61b1w.png',
+            cat: 'http://i68.tinypic.com/i2py8g.png',
+            crocodile: 'http://i65.tinypic.com/ml5kaq.png',
+            dog: 'http://i67.tinypic.com/mb1hch.png',
+            elephant: 'http://i67.tinypic.com/2j16czm.png',
+            fox: 'http://i64.tinypic.com/34fxqtk.png',
+            giraffe: 'http://i66.tinypic.com/259d81z.png',
+            hippopotamus: 'http://i68.tinypic.com/nmdyqg.png',
+            horse: 'http://i64.tinypic.com/2uruweg.png',
+            lion: 'http://i64.tinypic.com/359hbad.png',
+            panda: 'http://i64.tinypic.com/b8232e.png',
+            pig: 'http://i67.tinypic.com/n177uo.png',
+            rabbit: 'http://i67.tinypic.com/n177uo.png',
+            rat: 'http://i63.tinypic.com/x0wkyd.png',
+            rhinoceros: 'http://i64.tinypic.com/xkounb.png',
+            sheep: 'http://i67.tinypic.com/2vbpncx.png',
+            tiger: 'http://i65.tinypic.com/2vwbb7q.png'
+        }
         let splitUsername = this.props.commentInfo.user.animal.split(' ')
         return (
             <div className='container' style={styles.container}>
             <div className='user' style={styles.user}>
                 <div className='usernameInfo' style={styles.usernameInfo}>
-               
+                    <img src={icons[splitUsername[0].toLowerCase()]} style={styles.icon}/>
                     <p style={styles.username}> Anonymous {this.props.commentInfo.user.animal} <br/> answered...</p>
                 </div>
                 <div className='delete' style={styles.delete} onClick={()=> this.onDeleteClick()}>x</div>
