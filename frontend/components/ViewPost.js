@@ -13,7 +13,9 @@ export default class ViewPost extends React.Component {
     this.state = {
       comments: [],
       postId: this.props.location.query.postId,
-      post: this.props.location.query.post
+      post: this.props.location.query.post,
+      open: false,
+      anchorEl: null,
     }
   }
 
