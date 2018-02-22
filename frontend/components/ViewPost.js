@@ -4,7 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import CommentList from './CommentList'
+import CommentList from './CommentList';
+import { Route, Redirect } from 'react-router'
 
 export default class ViewPost extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class ViewPost extends React.Component {
   }
  
   onAllPostsClick() {
-   this.setState({displayedPosts: this.state.allPosts})
+   <Redirect to="/"/>
   }
  
   handleMenuClick(event) {
