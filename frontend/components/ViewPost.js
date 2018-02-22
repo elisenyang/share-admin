@@ -44,24 +44,25 @@ export default class ViewPost extends React.Component {
   }
  
   handleMenuClick(event) {
-   event.preventDefault()
-   this.setState({
-     open: true,
-     anchorEl: event.currentTarget,
-   });
-  }
- 
-  handleRequestClose() {
+    event.preventDefault()
     this.setState({
-      open: false
-    })
-  }
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+   }
+  
+   handleRequestClose() {
+     this.setState({
+       open: false
+     })
+   }
+  
 
   render() {
     return (
       <div>
         <MuiThemeProvider>
-        <AppBar style={styles.AppBar} onLeftIconButtonTouchTap={(event) => this.handleMenuClick(event)}/>
+        <AppBar style={styles.AppBar} onLeftIconButtonClick={(event) => this.handleMenuClick(event)}/>
       </MuiThemeProvider>
       <MuiThemeProvider>
       <Popover
@@ -74,10 +75,11 @@ export default class ViewPost extends React.Component {
         <Menu>
             <MenuItem primaryText="All Posts" onClick={() => this.onAllPostsClick()}/>
             <MenuItem primaryText="Flagged Posts" onClick={() => this.onFlaggedPostsClick()}/>
+            <MenuItem primaryText="Flagged Comments" onClick={() => this.onFlaggedCommentsClick()}/>
           </Menu>
         </Popover>
         </MuiThemeProvider>
-        <div className='homeContainer' style={styles.postContainer}> 
+        <div className='postContainer' style={styles.postContainer}> 
           <CommentList comments={this.state.comments} postId={this.state.postId} post={this.state.post} flagged={false}/>
         </div>
       </div>
