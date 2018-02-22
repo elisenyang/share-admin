@@ -5,7 +5,8 @@ import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import CommentList from './CommentList';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default class ViewPost extends React.Component {
   constructor(props) {
@@ -40,9 +41,9 @@ export default class ViewPost extends React.Component {
    this.setState({displayedPosts: flaggedArr, flagged: true, flaggedPosts: flaggedArr})
   }
  
-  onAllPostsClick() {
-   <Redirect to="/"/>
-  }
+  // onAllPostsClick() {
+  //  <Redirect to
+  // }
  
   handleMenuClick(event) {
     event.preventDefault()
@@ -74,9 +75,7 @@ export default class ViewPost extends React.Component {
           onRequestClose={() => this.handleRequestClose()}
         >
         <Menu>
-            <MenuItem primaryText="All Posts" onClick={() => this.onAllPostsClick()}/>
-            <MenuItem primaryText="Flagged Posts" onClick={() => this.onFlaggedPostsClick()}/>
-            <MenuItem primaryText="Flagged Comments" onClick={() => this.onFlaggedCommentsClick()}/>
+            <Link to="/"><MenuItem primaryText="Home"/></Link>
           </Menu>
         </Popover>
         </MuiThemeProvider>
